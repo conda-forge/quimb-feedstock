@@ -28,7 +28,7 @@ requirements:
     - scipy >=1.0.0
     - tqdm >=4
     - autoray
-    - opt-einsum
+    - opt-einsum >=3.2
 
 test:
   imports:
