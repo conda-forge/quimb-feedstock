@@ -1,5 +1,5 @@
 {% set name = "quimb" %}
-{% set version = "1.6.0" %}
+{% set version = "1.7.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/quimb-{{ version }}.tar.gz
-  sha256: e7b76af7fc481719d864fa663db6854364ea7ea5bf5e4e7a5748494d072c1c68
+  sha256: 2ca0ddbc650b0fe33154e427e77c6405c572614c61d51e08c55aca7d47fbf0e1
 
 build:
   noarch: python
@@ -28,8 +28,8 @@ requirements:
     - psutil >=4.3.1
     - cytoolz >=0.8.0
     - tqdm >=4
-    - opt-einsum >=3.2
-    - autoray >=0.6.6
+    - autoray >=0.6.7
+    - cotengra >=0.5.6
 
 test:
   imports:
