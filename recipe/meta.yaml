@@ -17,9 +17,8 @@ build:
 requirements:
   host:
     - python >=3.6
-    - setuptools >=45
-    - setuptools-scm >=6.2
     - hatchling
+    - hatch-vcs
     - pip
   run:
     - python >=3.6
