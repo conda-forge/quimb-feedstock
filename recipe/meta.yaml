@@ -1,5 +1,5 @@
 {% set name = "quimb" %}
-{% set version = "1.14.0" %}
+{% set version = "1.15.0" %}
 {% set python_min = "3.11" %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/quimb-{{ version }}.tar.gz
-  sha256: 8c3706088ba76e281334f719b341d4630e63c36bf4fe53bbfb46325e506dcad3
+  sha256: a8b4a11df89f50a8dcea6722c58d6077fa4133c9caaafba7412310877e51d81a
 
 build:
   noarch: python
