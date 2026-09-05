@@ -1,0 +1,55 @@
+schema_version: 1
+
+context:
+  name: quimb
+  version: "1.15.0"
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/quimb-${{ version }}.tar.gz
+  sha256: a8b4a11df89f50a8dcea6722c58d6077fa4133c9caaafba7412310877e51d81a
+
+build:
+  number: 1
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+
+requirements:
+  host:
+    - python ${{ python_min }}.*
+    - hatchling
+    - hatch-vcs
+    - pip
+  run:
+    - python >=${{ python_min }}
+    - numpy >=1.17
+    - scipy >=1.16.0
+    - numba >=0.39
+    - psutil >=4.3.1
+    - cytoolz >=0.8.0
+    - tqdm >=4
+    - autoray >=0.8
+    - cotengra >=0.7.1
+
+tests:
+  - python:
+      imports:
+        - quimb
+      pip_check: true
+      python_version:
+        - ${{ python_min }}
+        - "*"
+
+about:
+  summary: Quantum information and many-body library.
+  license: Apache-2.0
+  license_file: LICENSE.txt
+  homepage: http://quimb.readthedocs.io
+
+extra:
+  recipe-maintainers:
+    - jcmgray
+    - jan-janssen
