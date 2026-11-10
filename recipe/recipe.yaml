@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: quimb
-  version: "1.15.0"
+  version: 1.16.0
 
 package:
   name: ${{ name|lower }}
@@ -10,10 +10,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/quimb-${{ version }}.tar.gz
-  sha256: a8b4a11df89f50a8dcea6722c58d6077fa4133c9caaafba7412310877e51d81a
+  sha256: b5ba4b7172fb516d053ed52150f8b04196fb13f1f226e9e691f61cf2de4b67f1
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
@@ -31,9 +31,8 @@ requirements:
     - psutil >=4.3.1
     - cytoolz >=0.8.0
     - tqdm >=4
-    - autoray >=0.8
-    - cotengra >=0.7.1
-
+    - autoray >=0.10.0
+    - cotengra >=0.8.3
 tests:
   - python:
       imports:
@@ -41,7 +40,7 @@ tests:
       pip_check: true
       python_version:
         - ${{ python_min }}
-        - "*"
+        - '*'
 
 about:
   summary: Quantum information and many-body library.
